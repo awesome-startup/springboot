@@ -1,3 +1,3 @@
-insert into users(id, name, email) values(1,'John','john@gmail.com');
-insert into users(id, name, email) values(2,'Rod','rod@gmail.com');
-insert into users(id, name, email) values(3,'Mike','mike@gmail.com');
+insert into users(id, name, email,disabled) values(1,'John','john@gmail.com', false);
+insert into users(id, name, email,disabled) values(2,'Rod','rod@gmail.com', false);
+insert into users(id, name, email,disabled) values(3,'Becky','becky@gmail.com', true);

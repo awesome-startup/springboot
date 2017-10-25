@@ -1,19 +1,25 @@
-package info.gokit.demo;
+package info.gokit.demo.security.entities;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false, unique = true)
     private String email;
+
     private boolean disabled;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Address> addresses;
 
     public User() {
     }
@@ -29,6 +35,14 @@ public class User {
         this.name = name;
         this.email = email;
         this.disabled = disabled;
+    }
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
     }
 
     public Integer getId() {

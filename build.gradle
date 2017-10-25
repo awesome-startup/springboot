@@ -40,4 +40,7 @@ dependencies {
 
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 
+	compile('net.bull.javamelody:javamelody-core:1.65.0')
+
+//	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 }

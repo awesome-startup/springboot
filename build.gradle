@@ -31,15 +31,23 @@ repositories {
 dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
+	// web
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	// db
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('mysql:mysql-connector-java')
 	compile('com.h2database:h2')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	// rest
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+
 	runtime('org.springframework.boot:spring-boot-devtools')
 
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 
+	// log
 	compile('net.bull.javamelody:javamelody-core:1.65.0')
 
 //	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')

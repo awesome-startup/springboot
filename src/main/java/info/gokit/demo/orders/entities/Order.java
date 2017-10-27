@@ -1,5 +1,7 @@
 package info.gokit.demo.orders.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,6 +17,7 @@ public class Order {
     @Column(nullable = false, name = "cust_email")
     private String customerEmail;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "order")
     private Set<OrderItem> orderItems;
 

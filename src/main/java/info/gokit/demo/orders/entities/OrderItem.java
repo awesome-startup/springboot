@@ -1,5 +1,7 @@
 package info.gokit.demo.orders.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class OrderItem {
     private String productCode;
     private int quantity;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;

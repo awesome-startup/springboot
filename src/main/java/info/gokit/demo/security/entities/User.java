@@ -1,6 +1,8 @@
 package info.gokit.demo.security.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -18,6 +20,7 @@ public class User {
 
     private boolean disabled;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "user")
     private Set<Address> addresses;
 
